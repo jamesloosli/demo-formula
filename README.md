@@ -1,9 +1,9 @@
 # demo-formula
 
-Purpose of formula. Include a short description of what the formula does.
+This is a demo formula that installs apache. I'm using it to teach an intro to saltstack class.
 
+Just about everything should be handled by the defaults.yaml and map.jinja.
 
-Describe in a readable form the states this formula supports with examples how to use those states.
 
 
 Install and setup brew:
