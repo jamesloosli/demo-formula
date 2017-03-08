@@ -9,10 +9,14 @@ Setup variable using grains['os_family'] based logic, only add key:values here
 that differ from whats in defaults.yml
 #}
 {% set os_family_map = salt['grains.filter_by']({
-        'Debian': {},
-        'Suse': {},
-        'Arch': {},
-        'RedHat': {},
+  'Debian': { 
+    config: "/etc/apache/sites-enabled/000-default",
+    pkg: "apache2" 
+   },
+   'RedHat': { 
+     config: "/etc/httpd/sites-enabled/000-default",
+     pkg: "httpd" 
+   },
   }
   , grain="os_family"
   , merge=salt['pillar.get']('demo:lookup'))

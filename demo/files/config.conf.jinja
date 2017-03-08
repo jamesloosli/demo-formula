@@ -1,0 +1,12 @@
+# vim: ft=sls
+# How to configure demo
+{%- from "demo/map.jinja" import demo with context %}
+
+NameVirtualHost *:{{ demo.http_port }}
+Listen {{ demo.http_port }}
+
+<IfModule mod_ssl.c>
+    # SSL name based virtual hosts are not yet supported, therefore no
+    # NameVirtualHost statement here
+    Listen {{ demo.https_port }}
+</IfModule>

@@ -5,10 +5,10 @@
 'demo-service not configured':
   test.succeed_without_changes
 
-#demo_service:
-#  service.running:
-#    - name: demo
-#    - enable: True
-#    - watch:
-#        - file: demo_config
+demo_service:
+  service.running:
+    - name: {{ demo.service }}
+    - enable: True
+    - watch:
+        - file: demo_config
 
